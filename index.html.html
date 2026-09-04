@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DKB Channel Request Helper</title>
+
   <style>
     :root {
       --pink: #f5a6bf;
@@ -53,7 +54,7 @@
       border-radius: 20px;
       padding: 20px;
       margin-top: 20px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
     }
 
     h2 {
@@ -77,7 +78,8 @@
       font-size: 16px;
     }
 
-    button, a.button {
+    button,
+    a.button {
       display: block;
       width: 100%;
       box-sizing: border-box;
@@ -100,13 +102,14 @@
       box-shadow: none;
     }
 
-    button:active, a.button:active {
+    button:active,
+    a.button:active {
       transform: translateY(1px);
     }
 
     textarea {
       width: 100%;
-      min-height: 110px;
+      min-height: 150px;
       box-sizing: border-box;
       padding: 12px;
       margin-top: 10px;
@@ -114,6 +117,7 @@
       border-radius: 12px;
       font-size: 14px;
       background: #fffafa;
+      resize: vertical;
     }
 
     .small {
@@ -156,84 +160,210 @@
     }
   </style>
 </head>
+
 <body>
+
   <div class="container">
+
     <header>
       <h1>DKB Channel Request Helper</h1>
       <div class="subtitle">BBのStationhead申請をかんたんに🩷</div>
     </header>
 
+
+    <!-- 使い方 -->
     <section class="card">
       <h2>使い方</h2>
-      <p><span class="step">①</span> 自分のStationhead HandleとEmailをコピー</p>
-      <p><span class="step">②</span> Request Channelを開く</p>
-      <p><span class="step">③</span> 下のボタンで必要項目をコピーして貼り付け</p>
-      <p class="small">※ Stationhead HandleとEmailはご自身のものを入力してください。</p>
+
+      <p>
+        <span class="step">①</span>
+        自分のStationhead HandleとEmailをコピー
+      </p>
+
+      <p>
+        <span class="step">②</span>
+        Request Channelを開く
+      </p>
+
+      <p>
+        <span class="step">③</span>
+        下のボタンで必要項目をコピーして貼り付け
+      </p>
+
+      <p class="small">
+        ※ Stationhead HandleとEmailはご自身のものを入力してください。
+      </p>
     </section>
 
+
+    <!-- 自分の情報 -->
     <section class="card">
       <h2>自分の情報</h2>
+
       <label for="handle">Stationhead Handle</label>
-      <input id="handle" placeholder="@なしでもOK 例：cheljpdkb" />
-      <button onclick="copyInput('handle', 'Handleをコピーしました！')">Handleをコピー</button>
+
+      <input
+        id="handle"
+        placeholder="@なしでもOK 例：cheljpdkb"
+      />
+
+      <button onclick="copyInput('handle', 'Handleをコピーしました！')">
+        Handleをコピー
+      </button>
+
 
       <label for="email">Email</label>
-      <input id="email" type="email" placeholder="your@email.com" />
-      <button onclick="copyInput('email', 'Emailをコピーしました！')">Emailをコピー</button>
+
+      <input
+        id="email"
+        type="email"
+        placeholder="your@email.com"
+      />
+
+      <button onclick="copyInput('email', 'Emailをコピーしました！')">
+        Emailをコピー
+      </button>
 
       <div id="notice" class="notice"></div>
     </section>
 
+
+    <!-- 申請ページ -->
     <section class="card">
       <h2>申請ページ</h2>
-      <a class="button" href="https://www.stationhead.com/p/request-channel" target="_blank" rel="noopener">
+
+      <a
+        class="button"
+        href="https://www.stationhead.com/p/request-channel"
+        target="_blank"
+        rel="noopener"
+      >
         Request Channelを開く
       </a>
-      <p class="small">別タブでStationheadの申請フォームが開きます。</p>
+
+      <p class="small">
+        別タブでStationheadの申請フォームが開きます。
+      </p>
     </section>
 
+
+    <!-- コピー用項目 -->
     <section class="card">
       <h2>コピー用項目</h2>
-      <button onclick="copyText('BB', 'Fandom「BB」をコピーしました！')">2. Fandomをコピー</button>
 
-      <button onclick="copyText('DKB', 'Artist or Topic「DKB」をコピーしました！')">4. Artist or Topicをコピー</button>
 
-      <button onclick="copyText(whyText, 'Whyの文章をコピーしました！')">5. Whyをコピー</button>
-      <textarea readonly>DKB has been releasing music since 2020 and fans are streaming from all over the world. They just released a Japanese single, are currently touring in Japan, and will release a Japanese album in November 2026. We have been applying for a channel since February 2026. Having a Stationhead channel would facilitate smoother communication among fans and support more effective streaming. The channel color should be pink (R：245 / G： 166 / B： 191).</textarea>
+      <!-- 2. Fandom -->
+      <button
+        onclick="copyText('BB', 'Fandom「BB」をコピーしました！')"
+      >
+        2. Fandomをコピー
+      </button>
 
-      <button onclick="copyText('R: 245\nG: 166\nB: 191\nHEX: #f5a6bf', 'カラー情報をコピーしました！')">
+
+      <!-- 4. Artist or Topic -->
+      <button
+        onclick="copyText('DKB', 'Artist or Topic「DKB」をコピーしました！')"
+      >
+        4. Artist or Topicをコピー
+      </button>
+
+
+      <!-- 5. Why -->
+      <button
+        onclick="copyText(whyText, 'Whyの文章をコピーしました！')"
+      >
+        5. Whyをコピー
+      </button>
+
+      <textarea
+        id="whyBox"
+        readonly
+      ></textarea>
+
+
+      <!-- 6. Color -->
+      <button
+        onclick="copyText(
+          'R: 245\nG: 166\nB: 191\nHEX: #f5a6bf',
+          'カラー情報をコピーしました！'
+        )"
+      >
         6. カラー情報をコピー
       </button>
-      <p><span class="color-chip"></span>R: 245 / G: 166 / B: 191 / HEX: #f5a6bf</p>
 
-      <button onclick="copyText(playlistLink, 'Spotify Playlist Linkをコピーしました！')">7. Playlist Linkをコピー</button>
-      <textarea readonly>https://open.spotify.com/playlist/2zLywSPYqGBvmuJ3zT3oG5?si=5cb6cdbce1db4904</textarea>
+      <p>
+        <span class="color-chip"></span>
+        R: 245 / G: 166 / B: 191 / HEX: #f5a6bf
+      </p>
 
-      <button onclick="copyText(stationsText, 'Stations一覧をコピーしました！')">8. Stations一覧をコピー</button>
-      <p class="small">※フォームでは1人ずつ入力して「＋Add」を押してください。</p>
-      <textarea readonly>dkbstreaming
-cheljpdkb
-kamariharry
-tiggerlilyz
-sillyland
-cyumo36
-nasecha215
-buriburiburiiii
-DKBSpain
-bbxdkb</textarea>
+
+      <!-- 7. Playlist -->
+      <button
+        onclick="copyText(
+          playlistLink,
+          'Spotify Playlist Linkをコピーしました！'
+        )"
+      >
+        7. Playlist Linkをコピー
+      </button>
+
+      <textarea
+        id="playlistBox"
+        readonly
+      ></textarea>
+
+
+      <!-- 8. Stations -->
+      <button
+        onclick="copyText(
+          stationsText,
+          'Stations一覧をコピーしました！'
+        )"
+      >
+        8. Stations一覧をコピー
+      </button>
+
+      <p class="small">
+        ※フォームでは1人ずつ入力して「＋Add」を押してください。
+      </p>
+
+      <textarea
+        id="stationsBox"
+        readonly
+      ></textarea>
+
     </section>
+
 
     <footer>
       Made for BBs to support DKB 🩷
     </footer>
+
   </div>
 
+
   <script>
-    const whyText = `DKB has been releasing music since 2020 and fans are streaming from all over the world. They just released a Japanese single, are currently touring in Japan, and will release a Japanese album in November 2026. We have been applying for a channel since February 2026. Having a Stationhead channel would facilitate smoother communication among fans and support more effective streaming. The channel color should be pink (R：245 / G： 166 / B： 191).`;
 
-    const playlistLink = `https://open.spotify.com/playlist/2zLywSPYqGBvmuJ3zT3oG5?si=5cb6cdbce1db4904`;
+    /*
+     * ==========================================
+     * コピーする文章
+     * ==========================================
+     */
 
-    const stationsText = `dkbstreaming
+
+    // 5. Why
+    const whyText =
+`DKB has been releasing music since 2020 and fans are streaming from all over the world. They just released a Japanese single, are currently touring in Japan, and will release a Japanese album in November 2026. We have been applying for a channel since February 2026. Having a Stationhead channel would facilitate smoother communication among fans and support more effective streaming. The channel color should be pink (R：245 / G： 166 / B： 191).`;
+
+
+    // 7. Spotify Playlist
+    const playlistLink =
+`https://open.spotify.com/playlist/2zLywSPYqGBvmuJ3zT3oG5?si=5cb6cdbce1db4904`;
+
+
+    // 8. Stations
+    const stationsText =
+`dkbstreaming
 cheljpdkb
 kamariharry
 tiggerlilyz
@@ -244,42 +374,111 @@ buriburiburiiii
 DKBSpain
 bbxdkb`;
 
+
+    /*
+     * ==========================================
+     * ページに文章を表示
+     * ==========================================
+     */
+
+    document.getElementById("whyBox").value = whyText;
+
+    document.getElementById("playlistBox").value = playlistLink;
+
+    document.getElementById("stationsBox").value = stationsText;
+
+
+    /*
+     * ==========================================
+     * コピー完了メッセージ
+     * ==========================================
+     */
+
     function showNotice(message) {
-      const notice = document.getElementById('notice');
+
+      const notice =
+        document.getElementById("notice");
+
       notice.textContent = message;
-      notice.style.display = 'block';
+
+      notice.style.display = "block";
+
       setTimeout(() => {
-        notice.style.display = 'none';
+
+        notice.style.display = "none";
+
       }, 1800);
     }
 
+
+    /*
+     * ==========================================
+     * テキストをコピー
+     * ==========================================
+     */
+
     async function copyText(text, message) {
+
       try {
+
         await navigator.clipboard.writeText(text);
+
         showNotice(message);
+
       } catch (err) {
+
         fallbackCopy(text);
+
         showNotice(message);
       }
     }
 
+
+    /*
+     * ==========================================
+     * 入力欄をコピー
+     * ==========================================
+     */
+
     function copyInput(id, message) {
-      const value = document.getElementById(id).value.trim();
+
+      const value =
+        document.getElementById(id).value.trim();
+
       if (!value) {
-        showNotice('先に入力してください');
+
+        showNotice("先に入力してください");
+
         return;
       }
+
       copyText(value, message);
     }
 
+
+    /*
+     * ==========================================
+     * 古いブラウザ用コピー処理
+     * ==========================================
+     */
+
     function fallbackCopy(text) {
-      const temp = document.createElement('textarea');
+
+      const temp =
+        document.createElement("textarea");
+
       temp.value = text;
+
       document.body.appendChild(temp);
+
       temp.select();
-      document.execCommand('copy');
+
+      document.execCommand("copy");
+
       document.body.removeChild(temp);
     }
+
   </script>
+
 </body>
 </html>
